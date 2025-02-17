@@ -1,0 +1,34 @@
+*{padding: 0;margin: 0; font-family: 'GongGothicMedium', sans-serif;}
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.wrap, .inner{width: 100%;height: 100vh; background-image: url(./img/num-bg.png); background-repeat: no-repeat; background-size: 100% 100vh;}
+.inner{background-image: url(./img/num-subbg.png);}
+.cont{display: flex;flex-flow: column;justify-content: center;align-items: center;width: 100%;height: 100%;}
+.cont h1{color: #fff;}
+#resultNum{color:#aaa;    font-size: 14px;}
+.cont-txt{margin-bottom: 8px;
+    margin-top: 13px;}
+.cont-txt p{color:#fff; text-align: center;}
+.result-wrap{text-align: center;}
+.result-wrap img{width: 150px;}
+.result-wrap p{color:#fff;}
+#chanceArea{margin-top:10px;}
+
+.num-input{border-radius: 17px;margin-top:10px;height: 34px;width: 225px; padding-left: 25px;}
+
+.btn-wrap{display: flex;justify-content: space-around;width: 360px;margin-top: 39px;
+    margin-bottom: 28px;}
+.btn-wrap button{background:url(./img/btn-bg.png) no-repeat;    width: 152px;
+    height: 38px;background-size: 100%;border: none;}
+    .btn-wrap button:disabled {
+        background-image: url("./img/dbtn-bg.png") !important; /* 비활성화 배경 */
+        cursor: not-allowed;
+        opacity: 0.7; /* 투명도 적용 */
+    }
+
