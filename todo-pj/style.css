@@ -13,6 +13,11 @@ left: 0;
 width: 151px;}
 .task-tab .tab{padding:10px 0; width: 150px;}
 
+.checkbtn{background: url(./img/checkbx_d.png) no-repeat; background-size: cover; width: 23px; height: 23px; border: none;}
+.checkbtn.done{background: url(./img/checkbx.png) no-repeat;background-size: cover; width: 23px; height:23px; border: none;}
+.delbtn{background: url(./img/delete.png) no-repeat;background-size: cover; width: 17px; height: 18px; border: none;}
+
+
 .input-area{margin: 30px auto 0s; text-align: center;}
 .input-area input{width: 60%; border:1px solid #ccc; border-radius: 30px; padding:10px 30px;}
 .input-area button{height:35px; width:35px; font-size: 20px; color:#fff; border-radius: 30px; background: #243bbe; border:none;}
@@ -27,7 +32,12 @@ width: 151px;}
 
 .task{background: #fff; margin:10px 0; padding:10px 20px;}
 .task-cont{display: flex;justify-content: space-between;}
+.check-cont-bx{display: flex;}
+.check-cont-bx p{padding: 0 10px;}
 .task .date{margin-top: 30px;color: #aaa;}
+
+.task-done{background-color: #eee; margin:10px 0; padding:10px 20px;}
+.task-done .check-cont-bx p{text-decoration: line-through;color:#777;}
 
 @media (min-width:720px){
     .task-board{margin-top:0; background:#ddd; width: calc(33.33% - 55px);}
