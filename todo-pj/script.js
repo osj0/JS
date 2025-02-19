@@ -15,6 +15,7 @@ let taskBtn = document.getElementById("taskBtn");
 let taskList=[];
 
 taskBtn.addEventListener("click",addTask);
+taskInput.addEventListener("focus",function(){taskInput.value=""})
 
 function addTask(){
     //객체이용
