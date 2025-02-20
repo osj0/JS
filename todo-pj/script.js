@@ -1,3 +1,16 @@
+//menu
+let menuCloseBtn = document.getElementById("menuCloseBtn");
+let menuOpenBtn = document.getElementById("menuOpenBtn");
+let navCont = document.getElementById("t-inner");
+
+menuOpenBtn.addEventListener("click", () => {
+    navCont.classList.add("active"); // active 클래스 추가
+});
+
+menuCloseBtn.addEventListener("click", () => {
+    navCont.classList.remove("active"); // active 클래스 제거
+});
+
 
 //inputarea
 let taskInput = document.getElementById("task-input");

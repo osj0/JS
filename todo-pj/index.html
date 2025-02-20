@@ -14,47 +14,83 @@
         </div>
     </div> -->
     <div class="wrap">
-        <div class="todo-warp">
-            <h1 class="todo-tit">To Do List</h1>
-            <div class="task-area">
-                <section class="task-tab-bx">
-                    <div class="task-tab">
-                        <div id="under-line"></div>
-                            <div id="all" class="tab">ALL</div>
-                            <div id="progress" class="tab">진행중</div>
-                            <div id="done" class="tab">끝남</div>
-                    </div>
-                    <!-- <div>
-                        <button>휴지통</button>
-                    </div> -->
-                </section>
+        <div id="t-inner" class="t-inner">
+            <div  id="navCont" class="nav-bar-bx">
                 
-                <section class="input-area">
-                    <input type="date" name="startDate" id="startDate">
-                    <input type="date" name="endDate" id="endDate">
-                    <input type="text" id="task-input">
-                    <button id="taskBtn">+</button>
-                </section>
-                <section class="task-board-bx">
-                    <div class="task-board todo">
-                        <h5>To Do</h5>
-                        <div id="taskBoard">
+                <div class="nav-cont">
+                    <div class="nav-tit">
+                        <div class="user-bx">
+                            <div class="userImg"><img src="" alt=""></div>
+                            <div class="usreName">Oh Seung Ju</div>
+                        </div>
+                        <button id="menuCloseBtn" class="menuBtn"><img src="./img/menuleft.png" alt="" width="30px"></button>
+                    </div>
+                    
+                    <div class="task-area">
+                        <div class="menu-tab">
+                            <div id="" class="tab active">To Do List</div>
+                            <div id="" class="tab" onclick="alert('준비중입니다')">Diary</div>
+                            <div id="" class="tab" onclick="alert('준비중입니다')">Calendar</div>
                         </div>
                     </div>
-                    <div class="task-board prog">
-                        <h5>In Progress</h5>
-                        <div id="taskBoardprog">
+                    <a href="#" class="logout">
+                        <p>로그아웃</p>
+                        <img src="./img/logout.png" alt="" style="
+                        opacity: 0.4;
+                    ">
+                    </a>
+                </div>
+            </div>
+            <div class="todo-warp">
+                <div class="todo-tit-bx ">
+                    <button id="menuOpenBtn" class="menuBtn"><img src="./img/menu.png" alt="" width="30px"></button>
+                    <h1 class="todo-tit">To Do List</h1>
+                </div>
+                <div class="task-area">
+                    <section class="task-tab-bx">
+                        <div class="task-tab">
+                            <div id="under-line"></div>
+                                <div id="all" class="tab">ALL</div>
+                                <div id="progress" class="tab">진행중</div>
+                                <div id="done" class="tab">끝남</div>
                         </div>
-                    </div>
-                    <div class="task-board done">
-                        <h5>Done</h5>
-                        <div id="taskBoarddone">
+                        <!-- <div>
+                            <button>휴지통</button>
+                        </div> -->
+                    </section>
+                    
+                    <section class="input-area">
+                        <div class="task-filter-bx">
+                            <input type="date" name="startDate" id="startDate">
+                            <input type="date" name="endDate" id="endDate">
                         </div>
-                    </div>
-                </section>
-                
+                        <div class="task-input-bx">
+                            <input type="text" id="task-input" placeholder="할 일을 입력하세요">
+                            <button id="taskBtn">+</button>
+                        </div>
+                    </section>
+                    <section class="task-board-bx">
+                        <div class="task-board todo">
+                            <h5>To Do</h5>
+                            <div id="taskBoard">
+                            </div>
+                        </div>
+                        <div class="task-board prog">
+                            <h5>In Progress</h5>
+                            <div id="taskBoardprog">
+                            </div>
+                        </div>
+                        <div class="task-board done">
+                            <h5>Done</h5>
+                            <div id="taskBoarddone">
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
             </div>
         </div>
+        
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
