@@ -7,17 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- <div class="trash-bx">
+        <div class="inner">
+            <div  id="taskBoardTrash">
+            </div>
+        </div>
+    </div> -->
     <div class="wrap">
         <div class="todo-warp">
             <h1 class="todo-tit">To Do List</h1>
             <div class="task-area">
-                <section class="task-tab">
-                    <div id="under-line"></div>
-                        <div class="tab">ALL</div>
-                        <div class="tab">진행중</div>
-                        <div class="tab">끝남</div>
+                <section class="task-tab-bx">
+                    <div class="task-tab">
+                        <div id="under-line"></div>
+                            <div id="all" class="tab">ALL</div>
+                            <div id="progress" class="tab">진행중</div>
+                            <div id="done" class="tab">끝남</div>
+                    </div>
+                    <!-- <div>
+                        <button>휴지통</button>
+                    </div> -->
                 </section>
+                
                 <section class="input-area">
+                    <input type="date" name="startDate" id="startDate">
+                    <input type="date" name="endDate" id="endDate">
                     <input type="text" id="task-input">
                     <button id="taskBtn">+</button>
                 </section>
@@ -25,35 +39,18 @@
                     <div class="task-board todo">
                         <h5>To Do</h5>
                         <div id="taskBoard">
-                            
                         </div>
                     </div>
-                    <!-- <div class="task-board prog">
+                    <div class="task-board prog">
                         <h5>In Progress</h5>
-                        <div id="taskBoard">
-                            <div class="task">
-                                <div class="task-cont">
-                                    <p><span><button>check</button></span>
-                                    sss</p>
-                                    <button>Delete</button>
-                                </div>
-                                <p class="date">25.02.18</p>
-                            </div>
+                        <div id="taskBoardprog">
                         </div>
                     </div>
                     <div class="task-board done">
                         <h5>Done</h5>
-                        <div id="taskBoard">
-                            <div class="task">
-                                <div class="task-cont">
-                                    <p><span><button>check</button></span>
-                                    sss</p>
-                                    <button>Delete</button>
-                                </div>
-                                <p class="date">25.02.18</p>
-                            </div>
+                        <div id="taskBoarddone">
                         </div>
-                    </div> -->
+                    </div>
                 </section>
                 
             </div>
@@ -61,5 +58,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
+
+    
 </body>
 </html>
