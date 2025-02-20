@@ -118,7 +118,8 @@ function render(){
                 </div>
                 <button class="delbtn" onclick="deleteTask('${list[i].id}')"></button>
             </div>
-            <p class="adddrop-cont">${task.addDropCont ? task.addDropCont : ""}</p>
+            ${task.addDropCont ? `<p class="adddrop-cont">${task.addDropCont}</p>` : ""}
+
             ${dateHTML} 
         </div>`;
 

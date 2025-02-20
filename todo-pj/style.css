@@ -57,7 +57,7 @@ width: 33.33%;}
 .input-area #startDate{width:120px; }
 .input-area #task-input{width: calc(100% - 115px); }
 .task-input-bx{width: 100%;margin-top: 10px;}
-.task-filter-bx{display: flex;}
+.task-filter-bx{display: flex;    flex-wrap: wrap;}
 .input-area #taskBtn{height:35px; width:35px; font-size: 20px; color:#fff; border-radius: 30px; background: #243bbe; border:none;}
 
 .dropdown{position: relative;}
@@ -116,6 +116,10 @@ width: 33.33%;}
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
+}
+@media (max-width:600px){
+    .dropdown{margin-top: 10px;}
+
 }
 @media (min-width:1024px){
     .input-area {width: 60%;}
