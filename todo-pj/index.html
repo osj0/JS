@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -51,8 +53,8 @@
                         <div class="task-tab">
                             <div id="under-line"></div>
                                 <div id="all" class="tab">ALL</div>
-                                <div id="progress" class="tab">진행중</div>
-                                <div id="done" class="tab">끝남</div>
+                                <div id="progress" class="tab">In Progress</div>
+                                <div id="done" class="tab">Done</div>
                         </div>
                         <!-- <div>
                             <button>휴지통</button>
@@ -63,6 +65,19 @@
                         <div class="task-filter-bx">
                             <input type="date" name="startDate" id="startDate">
                             <input type="date" name="endDate" id="endDate">
+                            <div class="dropdown">
+                                <button id="dropBtn" class="dropBtn" type="button">분류 </button>
+                                <div id="dropMenu" class="dropdown-menu">
+                                    <ul id="dropCont">
+                                        
+                                    </ul>
+                                    <div class="add-input-bx">
+                                        <input tyep="text" id="addDropInput" class="addDrop" placeholder="추가하기">
+                                        <button id="addDropBtn" class="addDbtn">+</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
                         </div>
                         <div class="task-input-bx">
                             <input type="text" id="task-input" placeholder="할 일을 입력하세요">
@@ -94,6 +109,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
+    <script src="addscript.js"></script>
 
     
 </body>

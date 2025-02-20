@@ -58,16 +58,18 @@ function addTask(){
         taskContent: taskInput.value, //입력한 값을 나타내자
         taskstartDate: taskstartDate, // 제대로 값 할당
         taskendDate: taskendDate,
+        addDropCont: selectedDropValue,
         isComplete:false //
     }
     taskList.push(task)
-    console.log(taskList)
+    console.log("taskList:", taskList)
 
     render()
     // 입력 필드 초기화
     taskInput.value = "";
     startDateInput.value = ""; // 시작 날짜 초기화
     if (endDateInput) endDateInput.value = ""; // 종료 날짜 초기화
+    dropBtn.textContent = "분류";
 
 }
 
@@ -94,6 +96,7 @@ function render(){
     for (let i = 0; i < list.length; i++) {
         let startDate = list[i].taskstartDate;
         let endDate = list[i].taskendDate;
+        let task = list[i];
         let dateHTML = "";
 
         // 날짜가 있는 경우만 <p> 태그 생성
@@ -115,6 +118,7 @@ function render(){
                 </div>
                 <button class="delbtn" onclick="deleteTask('${list[i].id}')"></button>
             </div>
+            <p class="adddrop-cont">${task.addDropCont ? task.addDropCont : ""}</p>
             ${dateHTML} 
         </div>`;
 
