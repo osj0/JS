@@ -1,5 +1,5 @@
 
-const API_KEY=`def2a526c8274005801712825b3c820c`
+//const API_KEY=`def2a526c8274005801712825b3c820c`
 let openMenu = document.getElementById("open_menu")
 
 let searchBtn = document.getElementById("searchBtn")
@@ -65,7 +65,7 @@ const render = () => {
     const newsHTML = newsList.map(news=>`
         <div class="news_cont">
                         <div class="newsimg">
-                            <img src=${news.urlToImage || './img/no-image.png' } alt="">
+                            <img src=${news.urlToImage || `./img/no-image.png` } alt="">
                         </div>
                         <div class="newstxt">
                             <div class="tit-bx">
@@ -76,7 +76,7 @@ const render = () => {
                                         : news.description) 
                                     : "내용 없음"} </p>
                             </div>
-                            <p class="date">${news.source.name || "no source"} ${moment(news.publishedAt).format('lll')}</p>
+                            <p class="date">${news.source.name || "no source"} ${moment(news.publishedAt).fromNow()}</p>
                         </div>
                     </div>
         `).join("")
