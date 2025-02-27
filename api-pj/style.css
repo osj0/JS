@@ -31,7 +31,7 @@ button{cursor: pointer;background: transparent;border:none;}
 .hamburger.active span:nth-child(2) {opacity: 0; /* 가운데 바 숨기기 */}
 .hamburger.active span:nth-child(3) {bottom: 50%;transform: translateY(50%) rotate(-45deg);}
 
-
+/* */
 .search-bg{display:none; position: fixed;top:0;left:0; z-index: 9;width: 100%;height: 100%; background: rgba(0, 0, 0, 0.5);}
 .sclose_btn_bx{display:flex; justify-content: right;}
 .sclose_btn{width: 35px;}
@@ -40,6 +40,14 @@ button{cursor: pointer;background: transparent;border:none;}
     border-bottom: 1px solid #aaa;
     padding:15px 10px;}
 
+.result-cont-bx{margin-top:30px;text-align: right;}
+.result-cont{display: flex; flex-wrap: wrap;justify-content: center;}
+.result-delete{text-align: right; text-decoration: underline; font-size: 14px; color:#aaa;}
+.result-item{min-width: 100px;text-align: center;
+    background: #eee;border-radius: 20px;padding: 5px 0;font-size: 14px;color: #333;margin: 5px;}
+
+.noResultsMessage{display: none; height:100vh;}
+.noResultsMessage p{padding:50px; font-size: 18px; text-align: center;}
 
 .news_cont{cursor: pointer; display: flex; flex-wrap: wrap;  padding: 20px 0; border-top: 1px solid #777;}
 .news_cont:hover .newsimg img{ transform: translate(-50%, -50%) scale(1.1);}
