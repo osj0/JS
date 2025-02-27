@@ -65,7 +65,9 @@ const render = () => {
     const newsHTML = newsList.map(news=>`
         <div class="news_cont">
                         <div class="newsimg">
-                            <img src=${news.urlToImage || `./img/no-image.png` } alt="">
+                            <img src="${news.urlToImage || './img/no-image.png'}" 
+                            onerror="this.onerror=null; this.src='./img/no-image.png';" 
+                            alt="">
                         </div>
                         <div class="newstxt">
                             <div class="tit-bx">
