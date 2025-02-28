@@ -8,6 +8,10 @@ let searchBx = document.getElementById("searchBx")
 let searchInput = document.getElementById("searchInput")
 let noMessage = document.getElementById("noResultsMessage")
 
+let url = new URL(
+    `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr&pageSize=20`
+  );
+
 let newsList=[]
 let searchHistory = [];
 const menus = document.querySelectorAll(".menu-bx button")
@@ -46,43 +50,59 @@ function checkDevice() {
     }
 }
 
-// 처음 실행
 checkDevice();
-
-// 화면 크기 변경 감지
 window.addEventListener("resize", checkDevice);
 
+// 중복
+const getNews = async()=>{
+    try{const response = await fetch(url);
+        
+        const data = await response.json();
+        if(response.status === 200){
+            if (data.totalResults === 0) {
+                throw new Error("검색어와 일치하는 결과가 없습니다");
+              }
+        
+              newsList = data.articles;
+              render();
+            } else {
+              throw new Error(data.message);
+            }
+        
+
+    } catch (e) {
+        errorRender(e.message);
+      }
+    
+}
+const errorRender = (message) => {
+    const errorHTML = `<div class="noResultsMessage">
+                <p>${message}</p>
+            </div>`
+    document.getElementById("newsCont").innerHTML=errorHTML;
+
+  };
 
 //api 불러오기
 const getLatestNews = async()=>{
 
     // const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
-    const url = new URL(
+    url = new URL(
         `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr&pageSize=20`
       );
-    const response = await fetch(url);
-    const data = await response.json()
-    newsList = data.articles
-    
-    render()
-    console.log("rdr", newsList)
+      getNews()
 };
 getLatestNews()
+
 
 //카테고리 선택
 const getNewsByCategory= async (event)=>{
     const category = event.target.textContent.toLowerCase()
-
-    console.log("catagory", category)
-    const url = new URL(
+    url = new URL(
         `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr&category=${category}&pageSize=20`
       );
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log("date", data);
 
-      newsList = data.articles;
-      render();
+      getNews()
 }
 
 // 키워드 입력
@@ -96,15 +116,11 @@ const getNewsByKeyword =async ()=>{
         renderSearchHistory(); // 화면에 업데이트
     }
 
-    const url = new URL(
+    url = new URL(
         `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr&q=${keyword}&pageSize=20`
       );
 
-    const response = await fetch(url);
-      const data = await response.json();
-      console.log("keyword", keyword, searchHistory)
-    newsList = data.articles;
-     render();
+      getNews()
       historyDelete();
 }
 // 키워드 검색 보여지기
@@ -149,14 +165,6 @@ document.querySelector(".headline a").addEventListener("click", (event) => {
 const render = () => {
     const newsCont = document.getElementById("newsCont");
 
-    // 뉴스 목록이 비어 있으면 "검색 결과가 없습니다" 메시지를 표시
-    if (newsList.length === 0) {
-        newsCont.innerHTML = `
-            <div class="noResultsMessage">
-                <p>검색 결과가 없습니다. 다른 검색어를 시도해 주세요.</p>
-            </div>
-        `;
-    } else {
         // 뉴스가 있으면 뉴스 목록을 출력
         const newsHTML = newsList.map(news => `
             <div class="news_cont">
@@ -178,31 +186,10 @@ const render = () => {
                 </div>
             </div>
         `).join("");
-
-    // const newsHTML = newsList.map(news=>`
-    //     <div class="news_cont">
-    //                     <div class="newsimg">
-    //                         <img src="${news.urlToImage || './img/no-image.png'}" 
-    //                         onerror="this.onerror=null; this.src='./img/no-image.png';" 
-    //                         alt="">
-    //                     </div>
-    //                     <div class="newstxt">
-    //                         <div class="tit-bx">
-    //                             <p class="tit">${news.title}</p>
-    //                             <p class="txt">${news.description 
-    //                                 ? (news.description.length > 200 
-    //                                     ? news.description.substring(0, 200) + "..." 
-    //                                     : news.description) 
-    //                                 : "내용 없음"} </p>
-    //                         </div>
-    //                         <p class="date">${news.source.name || "no source"} ${moment(news.publishedAt).fromNow()}</p>
-    //                     </div>
-    //                 </div>
-    //     `).join("")
     
     document.getElementById("newsCont").innerHTML=newsHTML;
 }
-}
+
 /*
 1. 버튼들 클릭이벤트 주기
 2. 카테고리별 뉴스 가져오기
