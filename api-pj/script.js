@@ -118,16 +118,20 @@ const pagenationRender=()=>{
     console.log("tot", totalResults)
     const firstPage = lastPage - (groupSize - 1) <= 0 ? 1 : lastPage - (groupSize - 1);
     
-    let pagenationHTML =`
-    <li onclick="moveToPage(1)"><a href="#">prev</a></li>
-    <li onclick="moveToPage(${paget - 1})"><a href="#">prev</a></li>`
+      let pagenationHTML =``
+      if (paget > 1) {
+        pagenationHTML += `<li onclick="moveToPage(1)"><a href="#"> &lt;&lt;</a></li>`;
+        pagenationHTML += `<li onclick="moveToPage(${paget - 1})"><a href="#"> &lt;</a></li>`;
+    } 
+
     for(let i=firstPage;i<=lastPage;i++){
         pagenationHTML+=`<li class="pageitem ${i===paget?"active":''}" onclick="moveToPage(${i})"><a href="#">${i}</a></li>`
     }
-    pagenationHTML +=`
-       <li onclick="moveToPage(${paget + 1})"><a href="#">next</a></li>
-    <li onclick="moveToPage(${totalPages})"><a href="#">next</a></li>`
-
+    if (paget < totalPages) {
+        pagenationHTML += `<li onclick="moveToPage(${paget + 1})"><a href="#"> &gt;</a></li>`;
+        pagenationHTML += `<li onclick="moveToPage(${totalPages})"><a href="#"> &gt;&gt;</a></li>`;
+    }
+    
     document.querySelector(".pagenation").innerHTML=pagenationHTML
 };
 
