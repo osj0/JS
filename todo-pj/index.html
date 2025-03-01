@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <div class="trash-bx">
+        <div class="inner">
+            <div  id="taskBoardTrash">
+            </div>
+        </div>
+    </div> -->
+    <div class="wrap">
+        <div id="t-inner" class="t-inner">
+            <div  id="navCont" class="nav-bar-bx">
+                
+                <div class="nav-cont">
+                    <div class="nav-tit">
+                        <div class="user-bx">
+                            <div class="userImg"><img src="" alt=""></div>
+                            <div class="usreName">Oh Seung Ju</div>
+                        </div>
+                        <button id="menuCloseBtn" class="menuBtn"><img src="./img/menuleft.png" alt="" width="30px"></button>
+                    </div>
+                    
+                    <div class="task-area">
+                        <div class="menu-tab">
+                            <div id="" class="tab active">To Do List</div>
+                            <div id="" class="tab" onclick="alert('준비중입니다')">Diary</div>
+                            <div id="" class="tab" onclick="alert('준비중입니다')">Calendar</div>
+                        </div>
+                    </div>
+                    <a href="#" class="logout">
+                        <p>로그아웃</p>
+                        <img src="./img/logout.png" alt="" style="
+                        opacity: 0.4;
+                    ">
+                    </a>
+                </div>
+            </div>
+            <div class="todo-warp">
+                <div class="todo-tit-bx ">
+                    <button id="menuOpenBtn" class="menuBtn"><img src="./img/menu.png" alt="" width="30px"></button>
+                    <h1 class="todo-tit">To Do List</h1>
+                </div>
+                <div class="task-area">
+                    <section class="task-tab-bx">
+                        <div class="task-tab">
+                            <div id="under-line"></div>
+                                <div id="all" class="tab">ALL</div>
+                                <div id="progress" class="tab">In Progress</div>
+                                <div id="done" class="tab">Done</div>
+                        </div>
+                        <!-- <div>
+                            <button>휴지통</button>
+                        </div> -->
+                    </section>
+                    
+                    <section class="input-area">
+                        <div class="task-filter-bx">
+                            <input type="date" name="startDate" id="startDate">~
+                            <input type="date" name="endDate" id="endDate">
+                            <div class="dropdown">
+                                <button id="dropBtn" class="dropBtn" type="button">분류 </button>
+                                <div id="dropMenu" class="dropdown-menu">
+                                    <ul id="dropCont">
+                                        
+                                    </ul>
+                                    <div class="add-input-bx">
+                                        <input tyep="text" id="addDropInput" class="addDrop" placeholder="추가하기">
+                                        <button id="addDropBtn" class="addDbtn">+</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="task-input-bx">
+                            <input type="text" id="task-input" placeholder="할 일을 입력하세요">
+                            <button id="taskBtn">+</button>
+                        </div>
+                    </section>
+                    <section class="task-board-bx">
+                        <div class="task-board todo">
+                            <h5>To Do</h5>
+                            <div id="taskBoard">
+                            </div>
+                        </div>
+                        <div class="task-board prog">
+                            <h5>In Progress</h5>
+                            <div id="taskBoardprog">
+                            </div>
+                        </div>
+                        <div class="task-board done">
+                            <h5>Done</h5>
+                            <div id="taskBoarddone">
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <script src="addscript.js"></script>
+
+    
+</body>
+</html>
