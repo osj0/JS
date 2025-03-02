@@ -146,6 +146,7 @@ getLatestNews()
 //카테고리 선택
 const getNewsByCategory= async (event)=>{
     const category = event.target.textContent.toLowerCase()
+    paget = 1;
     url = new URL(
         `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr&category=${category}&pageSize=20`
       );
