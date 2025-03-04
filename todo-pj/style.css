@@ -11,7 +11,7 @@ h1{font-size: 36px; padding:20px 0; }
 .t-inner.active #menuOpenBtn{display:none}
 .t-inner.active .nav-cont{display: block;position: fixed; width: 250px;
     height: 100%; z-index: 99;}
-.t-inner.active .todo-warp{padding:30px 20px; width: 80%;}
+
 
 .nav-cont{display:none; background-color: #eee; padding:30px;box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;}
 .nav-tit{display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; padding: 25px 0;}
@@ -44,7 +44,7 @@ border-bottom: 1px solid #ddd; width: 100%;}
 #under-line{background-color: #243bbe; height: 4px;
 position: absolute;bottom: 0;
 left: 0;
-width: 33.33%;}
+width: 33.33% !important;}
 .task-tab .tab{padding:10px 0; width: 33.33%; cursor: pointer;text-align: center;}
 
 .checkbtn{background: url(./img/checkbx_d.png) no-repeat; background-size: cover; width: 23px; height: 23px; border: none;}
@@ -125,7 +125,7 @@ width: 33.33%;}
     .input-area {width: 60%;}
     .task-board{margin-top:0; background:#ddd; width: calc(33.33% - 55px);}
     .task-tab{}
-#under-line{position: absolute;bottom: 0;left: 0;width: 150px;}
+#under-line{position: absolute;bottom: 0;left: 0;width: 150px !important;}
 .task-tab .tab{padding:10px 0; width: 150px; cursor: pointer;text-align: center;}
-
+.t-inner.active .todo-warp{padding:30px 20px; width: calc(100% - 360px);}
 }
